@@ -58,21 +58,21 @@ class RekognitionTest(Resource) :
 
         print(response)
 
+        # 결과값 저장할 result_list 생성
+        result_list = []
         for faceDetail in response['FaceDetails']:
-            print('The detected face is between ' + str(faceDetail['AgeRange']['Low']) 
-                + ' and ' + str(faceDetail['AgeRange']['High']) + ' years old')
 
-            print('Here are the other attributes:')
-            print(json.dumps(faceDetail, indent=4, sort_keys=True))
+            result_list.append("AgeRange" + str(faceDetail['AgeRange']))
+            result_list.append("Gender: " + str(faceDetail['Gender']))
+            result_list.append("Smile: " + str(faceDetail['Smile']))
+            result_list.append("EyesOpen: " + str(faceDetail['EyesOpen']))
+            result_list.append("Eyeglasses: " + str(faceDetail['Eyeglasses']))
+            result_list.append("Emotions: " + str(faceDetail['Emotions'][0]))
+            
+            print(result_list)
 
-            # Access predictions for individual face details and print them
-            print("Gender: " + str(faceDetail['Gender']))
-            print("Smile: " + str(faceDetail['Smile']))
-            print("Eyeglasses: " + str(faceDetail['Eyeglasses']))
-            print("Emotions: " + str(faceDetail['Emotions'][0]))
-
-            return (response['FaceDetails'])
+            return { "result" : result_list }
 
         
-            # 5. 결과를 클라이언트에 보내준다
+        # 5. 결과를 클라이언트에 보내준다
         return {'result' : 'success'}            
