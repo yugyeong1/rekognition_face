@@ -56,8 +56,6 @@ class RekognitionTest(Resource) :
 
         response = client.detect_faces(Image={'S3Object':{'Bucket':Config.S3_BUCKET, 'Name':new_file_name}}, Attributes=['ALL'])
 
-        print(response)
-
         # 결과값 저장할 result_list 생성
         result_list = []
         for faceDetail in response['FaceDetails']:
