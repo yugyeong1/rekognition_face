@@ -21,6 +21,6 @@ class Config :
     SECRET_ACCESS = 'dAWIJkz+1KpalncF/zkLGpvoSOrr10ZwLjMJVoew'
     
     # S3 버킷
-    S3_BUCKET = 'dbrud1032-yh-test2'
+    S3_BUCKET = 'rekognition123test'
     # S3 Location
-    S3_LOCATION = 'https://dbrud1032-yh-test2.s3.ap-northeast-2.amazonaws.com/'
+    S3_LOCATION = 'https://rekognition123test.s3.ap-northeast-2.amazonaws.com/'
