@@ -100,7 +100,6 @@ class RekognitionCompare(Resource):
         sourceFile.filename = "source" + new_file_name
         targetFile.filename = "target" + new_file_name
         
-        
         ### 2-5. S3에 파일 업로드 한다.
         ###      파일 업로드하는 코드는! boto3라이브러리를
         ###      이용해서 업로드한다.
@@ -108,6 +107,7 @@ class RekognitionCompare(Resource):
         client = boto3.client('s3', 
                     aws_access_key_id = Config.ACCESS_KEY,
                     aws_secret_access_key = Config.SECRET_ACCESS)
+        
         try :
             client.upload_fileobj(sourceFile,
                                     Config.S3_BUCKET,
@@ -131,8 +131,8 @@ class RekognitionCompare(Resource):
                     aws_secret_access_key = Config.SECRET_ACCESS)
 
         response = client.compare_faces(SimilarityThreshold=80,
-                                        SourceImage={'S3Object':{'Bucket':Config.S3_BUCKET, 'Name':"source" + new_file_name}},
-                                        TargetImage={'S3Object':{'Bucket':Config.S3_BUCKET, 'Name':"target" + new_file_name}})
+                                        SourceImage={'S3Object':{'Bucket':Config.S3_BUCKET, 'Name': "source" + new_file_name}},
+                                        TargetImage={'S3Object':{'Bucket':Config.S3_BUCKET, 'Name': "target" + new_file_name}})
 
         print(response)
 
@@ -146,7 +146,6 @@ class RekognitionCompare(Resource):
             result_list.append("source" + new_file_name+ " : " +str(position['Left']) )
             result_list.append("target" + new_file_name+" : " +str(position['Top']) )
             result_list.append('matches with ' + similarity + '% confidence')
-            
             
             return {"result" : result_list}
 
