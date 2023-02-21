@@ -1,5 +1,10 @@
 ## Amazon Rekognition 의 얼굴 감지, 얼굴 인식 코드 구현 결과  
 
+
+노출이 되면 안되는 정보는 Config 파일에 저장하였고, 깃에는 config 파일을 제외하고 업로드 하였다.  
+  
+
+
 ### detect_faces  
 Rekognition을 사용하면 이미지에서 얼굴을 감지한 위치에 대한 정보뿐 아니라 눈의 위치와 같은 얼굴 표식과, 행복해 보이거나 슬퍼 보이는 등의 감지된 감정에 대한 정보를 가져올 수 있다.  
 https://docs.aws.amazon.com/ko_kr/rekognition/latest/dg/faces-detect-images.html  
