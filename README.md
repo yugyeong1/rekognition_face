@@ -3,7 +3,7 @@
   
   
 구현한 결과를 이용하여 Amazon Rekognition 세미나를 진행하였다.  
-https://docs.google.com/presentation/d/18e2Ufn11lykFLgy7ryZBAoIkA5MGKOa1_iHrWSlGyn0/edit#slide=id.g20f6ac9d3ce_0_232  
+https://docs.google.com/presentation/d/18e2Ufn11lykFLgy7ryZBAoIkA5MGKOa1_iHrWSlGyn0/edit?usp=sharing
   
 노출이 되면 안되는 정보는 Config 파일에 저장하였고, 깃에는 config 파일을 제외하고 업로드 하였다.  
 
